@@ -1,0 +1,28 @@
+@import "./resources/mixins.scss";
+@import "./resources/variables.scss";
+@import "./resources/scaffoldings.scss";
+@import "./src/client/app/components/input/Input.scss";
+
+* {
+    box-sizing: border-box;
+}
+
+body,
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    line-height: 1.1;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: $font-family;
+
+    #__next {
+        @import "./app/Application.scss";
+        @import "./app/desktop/private/PrivateApplication.scss";
+        @import "./app/desktop/public/PublicApplication.scss";
+
+        height: 100%;
+    }
+}

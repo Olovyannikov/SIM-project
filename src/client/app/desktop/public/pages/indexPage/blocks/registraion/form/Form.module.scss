@@ -1,0 +1,40 @@
+.form {
+  display: flex;
+  flex-direction: column;
+
+  .title {
+    margin-bottom: $side-offset;
+    display: block;
+    color: $color-shark;
+    font: $font-medium;
+    opacity: 0.6;
+  }
+
+  .controls {
+    display: flex;
+  }
+
+  .label {
+    margin-bottom: $side-offset;
+
+    input {
+      width: 100%;
+    }
+    &:not(:last-of-type) {
+      margin-bottom: $middle-offset;
+    }
+  }
+
+  .agree {
+    margin: 0;
+    margin-bottom: $gap;
+    color: $color-shark;
+    opacity: 0.6;
+    font: $font-small;
+
+    a {
+      color: $color-accent;
+      text-decoration: none;
+    }
+  }
+}

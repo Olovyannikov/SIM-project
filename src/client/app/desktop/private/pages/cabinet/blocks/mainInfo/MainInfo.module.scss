@@ -1,0 +1,14 @@
+.mainInfo {
+    margin-bottom: 48px;
+
+    .top {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 47px;
+        flex-wrap: wrap;
+
+        @media (max-width: 626px) {
+            flex-direction: column;
+        }
+    }
+}

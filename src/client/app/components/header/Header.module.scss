@@ -1,0 +1,32 @@
+.header {
+    margin: 0 0 $gap;
+    padding-top: $small-offset;
+    padding-bottom: $small-offset;
+    background-color: $color-shark;
+    color: $color-white;
+    font: $font-header;
+
+    .wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .left {
+        span {
+            position: relative;
+
+            &::after {
+                content: "";
+                position: absolute;
+                display: block;
+                width: 1px;
+                height: 24px;
+                right: -$middle-offset;
+                top: 50%;
+                transform: translateY(-50%);
+                opacity: 0.1;
+                background-color: $color-white;
+            }
+        }
+    }
+}

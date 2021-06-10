@@ -1,0 +1,43 @@
+.balance {
+    margin-top: $gap;
+    @media (max-width: 626px) {
+        margin-top: 0;
+        margin-bottom: $gap;
+    }
+
+    .title {
+        margin: 0;
+        margin-bottom: $middle-offset;
+        font: $font-medium;
+        color: $color-dark-lighter;
+
+        @media (max-width: 402px) {
+            margin-bottom: $rare-offset;
+        }
+    }
+
+    .time {
+        &::before {
+            content: ' ';
+        }
+    }
+
+    .subtitle {
+        display: block;
+        font: $font-big;
+        margin-bottom: $small-offset;
+
+        @media (max-width: 402px) {
+            font-size: 28px;
+            line-height: 36px;
+            margin-bottom: 5px;
+        }
+    }
+
+    .paymentNotification {
+        color: #8E9BA8;
+        font: $font-light;
+    }
+
+
+}

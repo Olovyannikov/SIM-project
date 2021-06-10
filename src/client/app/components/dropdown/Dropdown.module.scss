@@ -1,0 +1,72 @@
+.dropdown {
+    width: 315px;
+    margin-bottom: $small-offset;
+
+    @include tablet {
+        width: 100%;
+    }
+
+    .header {
+        cursor: pointer;
+        padding: $small-offset $rare-offset;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: $color-accent;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.04);
+
+        &.open {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            box-shadow: none;
+            border-bottom: 1px solid $color-grey-light;
+        }
+
+        @include tablet {
+            border-radius: 50px;
+        }
+    }
+
+    .body {
+        display: none;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.04);
+
+        &.open {
+            display: block;
+        }
+    }
+
+    .item {
+        padding: $small-offset $rare-offset;
+        transition: background-color 0.3s ease-in-out;
+
+        &:hover {
+            cursor: pointer;
+            background-color: $color-grey-light;
+        }
+
+        @include tablet {
+            padding: $small-offset;
+        }
+    }
+
+    .icon {
+        font-size: 13px;
+        fill: currentColor;
+        opacity: 0.6;
+        transform: rotate(0deg);
+        transition: all .2s ease-in-out;
+
+        &.open {
+            transform: rotate(-180deg);
+        }
+    }
+
+    span {
+        pointer-events: none;
+    }
+
+    .isSelected {
+        color: $color-accent;
+    }
+}

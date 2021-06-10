@@ -1,0 +1,33 @@
+.container {
+    max-width: 1280px;
+    padding-left: 32px;
+    padding-right: 32px;
+    margin: 0 auto;
+}
+
+.btn-reset {
+    @include btn-reset;
+}
+
+.list-reset {
+    @include list-reset;
+}
+
+.visually-hidden {
+    position: absolute;
+    overflow: hidden;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    width: 1px;
+    height: 1px;
+    clip: rect(0 0 0 0);
+}
+
+.error {
+    box-shadow: 0 0 2px #ff4019;
+}
+
+img {
+    max-width: 100%;
+}

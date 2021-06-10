@@ -1,0 +1,25 @@
+.simCardsItems {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 60px;
+    gap: 20px;
+
+    button {
+        margin-top: auto;
+    }
+    .deactivate {
+        @media (max-width: 402px) {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: $middle-offset;
+        }
+    }
+
+    @media (max-width: 1284px) {
+        gap: 0;
+        justify-content: center;
+    }
+}
+

@@ -1,0 +1,22 @@
+.input {
+    padding: $small-offset $rare-offset;
+    border: none;
+    font: $font-light;
+    background-color: $color-grey-light;
+    appearance: none;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    [type="number"] {
+        -moz-appearance: textfield;
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 3px $color-accent;
+    }
+}

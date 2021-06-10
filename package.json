@@ -1,0 +1,33 @@
+{
+  "name": "unitrade-web",
+  "version": "1.0.0",
+  "scripts": {
+    "install": "gulp && next build",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  
+  "devDependencies": {
+
+    "@types/react": "17.0.9",
+    "@types/react-dom": "17.0.6",
+    "@types/react-router": "5.1.14",
+    "@types/react-router-dom": "5.1.7",
+
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-router": "5.2.0",
+    "react-router-dom": "5.2.0",
+
+    "gulp": "4.0.2",
+    "gulp-clean": "0.4.0",
+    
+    "next": "10.2.3",
+    "next-images": "1.7.0",
+    "sass": "1.34.1",
+  
+    "typescript": "4.3.2"
+  }
+  
+}

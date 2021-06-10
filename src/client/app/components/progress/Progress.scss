@@ -1,0 +1,106 @@
+.progress {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    @media (max-width: 402px) {
+        display: none;
+    }
+
+    &__period {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        font: $font-light;
+        color: rgba(27, 27, 27, 0.6);
+        margin-bottom: $side-offset;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    &__error {
+        width: 100%;
+        display: block;
+        margin: 0;
+        margin-top: $middle-offset;
+        text-align: right;
+        color: $color-error;
+    }
+
+    &__count {
+        margin-left: $side-offset;
+
+        span {
+            &:first-child {
+                font: $font-big;
+
+                &::after {
+                    content: ' ';
+                }
+            }
+        }
+    }
+
+    $themeColor: #1dbe5e;
+    $backColor: #eee;
+    $textShadow: rgba(black, 0.35) 1px 1px 1px;
+
+    &__circle {
+        position: relative;
+        display: inline-block;
+        width: 61px;
+        height: 61px;
+        border-radius: 50%;
+        background-color: $backColor;
+        transform: rotate(270deg);
+
+        &::after {
+            content: "";
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-color: $themeColor;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 45px;
+            height: 45px;
+            background: #fff;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    $step: 1;
+    $loops: round((100 / $step));
+    $increment: 360 / $loops;
+    $half: round($loops / 2);
+    @for $i from 0 through $loops {
+        &__circle.progress--#{$i * $step}:after {
+            @if $i < $half {
+                $nextDeg: 90deg + ($increment * $i);
+                background: no-repeat center,
+                linear-gradient(90deg, $backColor 51%, transparent 50%, transparent),
+                linear-gradient($nextDeg, $themeColor 50%, $backColor 50%, $backColor);
+                background-size: 100%, 100%, 100%, 100%;
+            } @else {
+                $nextDeg: -90deg + ($increment * ($i - $half));
+                background: no-repeat center,
+                linear-gradient($nextDeg, $themeColor 51%, transparent 50%, transparent),
+                linear-gradient(270deg, $themeColor 50%, $backColor 50%, $backColor);
+                background-size: 100%, 100%, 100%, 100%;
+            }
+        }
+    }
+}

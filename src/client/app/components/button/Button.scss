@@ -1,0 +1,24 @@
+.btn {
+    padding: $small-offset $gap;
+    border-radius: 50px;
+    color: $color-accent;
+
+    &--primary {
+        background-color: $color-accent;
+        color: $color-white;
+        transition: all 0.3s ease-in-out;
+    }
+
+    &--secondary {
+        font-size: 15px;
+        line-height: 20px;
+        color: #1b1b1b;
+        border: 1px solid $color-shark;
+        transition: 0.3s ease-in-out;
+        &:hover {
+            border: 1px solid transparent;
+            color: #fff;
+            background-color: $color-shark;
+        }
+    }
+}

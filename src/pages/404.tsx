@@ -1,13 +1,15 @@
 import * as React from 'react';
-import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 export const CustomErrorPage = () => {
 
-    return (
-        <div className="ErrorPage">
-            Error, back to <Link href='/'><a>main page</a></Link>
-        </div>
-    )
+    const router = useRouter();
+
+    React.useEffect(() => {
+        router.push('/')
+    })
+
+    return <></>
 
 }
 

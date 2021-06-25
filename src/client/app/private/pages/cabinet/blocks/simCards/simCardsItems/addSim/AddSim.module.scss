@@ -1,0 +1,83 @@
+.item {
+    padding: $side-offset $middle-offset $rare-offset;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #E2E2E2;
+    max-width: 592px;
+    margin-bottom: $gap;
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+        background-color: #e2e2e2;
+    }
+
+
+    .addSim {
+
+        input:disabled {
+            opacity: 0.6;
+        }
+
+        .title {
+            font: $font-medium;
+            color: $color-shark;
+            opacity: 0.6;
+        }
+
+    }
+
+    @media (max-width: 1284px) {
+        max-width: 100%;
+        &:not(:last-child) {
+            margin-right: 0;
+            margin-bottom: $gap;
+        }
+    }
+
+    align-items: center;
+
+    button {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+.addSim {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+
+    input {
+        max-width: 348px;
+    }
+
+    @media (max-width: 651px) {
+        width: 100%;
+    }
+}
+
+.addSimForm {
+
+    @media (max-width: 651px) {
+        width: 100%;
+    }
+
+    input {
+        @media (max-width: 651px) {
+            min-width: 100%;
+        }
+    }
+}
+
+.addSimControls {
+    margin-left: 48px;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+
+    @media (max-width: 651px) {
+        margin-left: 0;
+        width: 100%;
+    }
+}

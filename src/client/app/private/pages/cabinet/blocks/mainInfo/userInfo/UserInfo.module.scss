@@ -1,0 +1,58 @@
+.user {
+    margin-top: $gap;
+
+    .title {
+        display: flex;
+        align-items: center;
+        margin: 0;
+        margin-bottom: $middle-offset;
+        color: $color-dark-lighter;
+        font: $font-medium;
+        line-height: 20px;
+
+        svg {
+            margin-left: $side-offset;
+        }
+
+        @media (max-width: 402px) {
+            margin-bottom: $rare-offset;
+        }
+    }
+
+    .subtitle {
+        display: block;
+        max-width: 320px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        font: $font-big;
+        margin-bottom: $small-offset;
+        @media (max-width: 402px) {
+            font: 700 28px / 36px $font-family;
+        }
+    }
+
+    small {
+        margin-bottom: $rare-offset;
+        text-decoration: none;
+        color: #1b1b1b;
+        font: $font-light;
+        max-width: 314px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: block;
+    }
+
+    .button {
+        color: $color-accent;
+        font: $font-light;
+        width: 100%;
+        text-align: left;
+        margin-bottom: 2vw;
+    }
+
+    @media (max-width: 626px) {
+        margin-bottom: $gap;
+        margin-top: 0;
+    }
+}

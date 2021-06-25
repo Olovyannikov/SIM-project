@@ -1,7 +1,18 @@
-import {Button} from "../button/Button";
+import * as React from 'react';
 
-export const Progress = (props: {isActive: boolean, progressLeft: any, }) => {
+import { Button } from "../button/Button";
+
+export const Progress = (props: {isActive: boolean, progressLeft: number, }) => {
     const daysProgress = Math.floor(100 / 31 * props.progressLeft);
+
+    const renderIsActiveProgress = () => {
+        if (props.isActive) {
+            return <p className="progress__error">Не активирована</p>
+        }
+        else {
+            return <Button bgcolor='secondary' text='Деактевировать'/>
+        }
+    }
 
     return (
         <div className="progress">
@@ -12,20 +23,14 @@ export const Progress = (props: {isActive: boolean, progressLeft: any, }) => {
                 <div className="progress__count">
                     <span>{props.progressLeft}</span>
                     <span>
+                        {/* todo - переделать  */}
                         {props.progressLeft == 1 || props.progressLeft == 21 || props.progressLeft ==31 ? 'день' :
                             props.progressLeft > 1 && props.progressLeft < 5 ? 'дня' : 'дней'}
                     </span>
                 </div>
             </div>
-            {!props.isActive ?
-                <p className="progress__error">Не активирована</p> :
-                <Button bgcolor='secondary' text='Деактевировать'/>
-            }
+            {renderIsActiveProgress()}
         </div>
     )
 }
 
-Progress.defaultProps = {
-    isActive: false,
-    progressLeft: 0
-}

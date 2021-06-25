@@ -5,13 +5,34 @@
     background-color: $color-shark;
     color: $color-white;
     font: $font-header;
+    z-index: 1;
+    position: relative;
 
     .wrapper {
         display: flex;
         justify-content: space-between;
-    }
+        align-items: center;
 
+    }
+    .toCabinet {
+        text-decoration: none;
+        color: white;
+
+        @media (max-width: 1024px) {
+            display: none;
+        }
+    }
+    
+    
     .left {
+        display: flex;
+        justify-content: space-between;
+        
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
         span {
             position: relative;
 
@@ -29,4 +50,14 @@
             }
         }
     }
+
+    .logout {
+
+        cursor: pointer;
+
+        @media (max-width: 1024px) {
+            display: none;
+        }
+    }
 }
+

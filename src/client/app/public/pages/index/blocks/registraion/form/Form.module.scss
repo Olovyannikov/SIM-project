@@ -1,0 +1,62 @@
+.form {
+
+  display: flex;
+  flex-direction: column;
+
+  .title {
+    margin-bottom: $side-offset;
+    display: block;
+    color: $color-shark;
+    font: $font-medium;
+    opacity: 0.6;
+  }
+
+  .controls {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    button {
+      @media (max-width: 475px) {
+        width: 100%;
+      }
+    }
+  }
+
+  .controlsColumn {
+    flex-direction: column;
+  }
+
+  .label {
+    margin-bottom: $side-offset;
+
+    input {
+      width: 100%;
+    }
+    &:not(:last-of-type) {
+      margin-bottom: $middle-offset;
+    }
+
+    :disabled {
+        opacity: 0.5;
+    }
+  }
+
+  .agree {
+    margin: 0;
+    margin-bottom: $gap;
+    color: $color-shark;
+    opacity: 0.6;
+    font: $font-small;
+
+    a {
+      color: $color-accent;
+      text-decoration: none;
+    }
+  }
+
+  .verifySuccess {
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
+}

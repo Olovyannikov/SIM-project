@@ -1,8 +1,5 @@
-.container {
-    max-width: 1280px;
-    padding-left: 32px;
-    padding-right: 32px;
-    margin: 0 auto;
+table {
+    width: 100%;
 }
 
 .btn-reset {
@@ -11,6 +8,13 @@
 
 .list-reset {
     @include list-reset;
+}
+
+.container {
+    max-width: 1280px;
+    padding-left: 32px;
+    padding-right: 32px;
+    margin: 0 auto;
 }
 
 .visually-hidden {
@@ -30,4 +34,33 @@
 
 img {
     max-width: 100%;
+}
+
+.input {
+    padding: $small-offset $rare-offset;
+    border: none;
+    font: $font-light;
+    background-color: $color-grey-light;
+    appearance: none;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    [type="number"] {
+        -moz-appearance: textfield;
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 3px $color-accent;
+    }
+}
+
+p.error {
+    box-shadow: none;
+    color: #eb5757!important;
+    width: 100%;
 }

@@ -1,6 +1,21 @@
-export const Button = (props: any) => {
+interface ButtonModel {
+    bgcolor: string,
+    text: string
+    onClick? : Function
+}
+
+export const Button = (props : ButtonModel) => {
+
+    let background = 'btn btn-reset';
+
+    if (props.bgcolor === 'primary') {
+        background += ' btn--primary';
+    } else if (props.bgcolor === 'secondary') {
+        background += ' btn--secondary';
+    }
+
     return (
-        <button className={props.bgcolor == 'primary' ? 'btn-reset btn btn--primary' : props.bgcolor == 'secondary' ? 'btn btn-reset btn--secondary' : 'btn-reset btn'}>
+        <button onClick={props.onClick ? () => props.onClick() : null} className={background}>
             {props.text}
         </button>
     )

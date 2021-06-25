@@ -1,0 +1,11 @@
+.accordion {
+    padding-bottom: 100px;
+
+    button {
+        display: block;
+        @include tablet {
+            display: none;
+        }
+    }
+
+}

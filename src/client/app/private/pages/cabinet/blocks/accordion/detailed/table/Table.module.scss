@@ -1,0 +1,27 @@
+.table {
+    margin-top: $middle-offset;
+    margin-bottom: $gap;
+    border-collapse: collapse;
+    width: 100%;
+    font: $font-light;
+
+    @include tablet {
+        font: 500 10px / 8px $font-family;
+    }
+
+    tr {
+        border: 1px solid #f6f6f6
+    }
+
+    td {
+        padding: $small-offset $gap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        @include tablet {
+            padding: 16px 20px;
+        }
+    }
+
+
+}

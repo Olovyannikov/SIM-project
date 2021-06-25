@@ -1,84 +1,103 @@
 .collapse {
-  .btn {
-    margin-bottom: $middle-offset;
-    padding-bottom: $middle-offset;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    font-weight: bold;
-    border-bottom: 1px solid #F6F6F6;
-
-    .title {
-      margin: 0;
-      color: $color-shark;
-      font: $font-bold;
-
-      @media (max-width: 402px) {
-        font: 700 18px / 22px $font-family;
-      }
-    }
-
-    + .content button {
-      font-weight: 400;
-    }
-
-    svg {
-      transition: transform 0.3s ease-in-out;
-      opacity: 0.6;
-
-      @media (max-width: 402px) {
-        margin-right: 16px;
-      }
-    }
-
-    &.expanded {
-      border-bottom: none;
-      padding-bottom: 0;
-      margin-bottom: $gap;
-      @media (max-width: 402px) {
-        margin-bottom: $side-offset;
-      }
-
-      svg {
-        transform: rotate(-180deg);
-      }
-    }
-  }
-
-  .content {
-    transition: 0.3s ease-in-out;
-    background-color: $color-white;
-    max-height: 100vh;
-    height: 0;
-    opacity: 0;
-    overflow: hidden;
-    will-change: height;
-    box-sizing: content-box;
-
-    &.collapsed {
-    }
-
-    &.expanded {
-      height: fit-content;
-      display: block;
-      margin-bottom: $gap;
-      z-index: 10;
-      opacity: 1;
-    }
-  }
-
-  /*Вложенный аккордеон */
-
-  .collapse {
     .btn {
-      .title {
-        font: 700 18px / 22px $font-family;
-      }
+        margin-bottom: $middle-offset;
+        padding-bottom: $middle-offset;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        font-weight: bold;
+        border-bottom: 1px solid #F6F6F6;
+
+        .title {
+            margin: 0;
+            text-align: left;
+            color: $color-shark;
+            font: $font-bold;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+            @media (max-width: 402px) {
+                font: 700 18px / 22px $font-family;
+            }
+        }
+
+        + .content button {
+            font-weight: 400;
+        }
+
+        svg {
+            transition: transform 0.3s ease-in-out;
+            opacity: 0.6;
+            flex-shrink: 0;
+
+            @media (max-width: 402px) {
+                margin-right: 16px;
+            }
+        }
+
+        &.expanded {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: $gap;
+            @media (max-width: 402px) {
+                margin-bottom: $side-offset;
+            }
+
+            svg {
+                transform: rotate(-180deg);
+            }
+        }
     }
 
     .content {
-      overflow: visible;
+        transition: all 0.3s ease-in-out;
+        background-color: $color-white;
+        max-height: 100vh;
+        height: 0;
+        opacity: 0;
+        overflow: hidden;
+        will-change: height;
+        box-sizing: content-box;
+
+        &.collapsed {
+        }
+
+        &.expanded {
+            margin-bottom: 70px;
+
+            @supports (height: fit-content) {
+                height: fit-content;
+            }
+            height: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            z-index: 10;
+            opacity: 1;
+        }
     }
-  }
+
+    /*Вложенный аккордеон */
+
+    .collapse {
+        width: 100%;
+
+        .btn {
+            .title {
+                font: 500 18px / 22px $font-family;
+            }
+        }
+
+        .content {
+            overflow: visible;
+            padding-bottom: $middle-offset;
+            padding-left: $middle-offset;
+
+            &.expanded {
+                border-bottom: 1px solid $color-wild-sand;
+
+            }
+        }
+    }
 }

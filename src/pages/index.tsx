@@ -1,10 +1,11 @@
 import * as React from 'react';
 
 import { GetServerSideProps, GetServerSidePropsContext } from 'next';
-import { DesktopApplication } from 'app/desktop/DesktopApplication';
+import { PublicApplication } from 'app/public/PublicApplication';
+
 
 const Main = () => {
-    return <DesktopApplication />
+    return <PublicApplication />
 }
 
 export const getServerSideProps : GetServerSideProps = async (context : GetServerSidePropsContext) => {

@@ -1,0 +1,91 @@
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 137px;
+  
+  .wrapper {
+    max-width: 435px;
+    padding: 0 $rare-offset;
+  }
+
+  .title {
+    box-sizing: border-box;
+    margin: 0;
+    margin-bottom: $gap;
+    font: $font-bold;
+    color: $color-shark;
+  }
+
+  .descr {
+    margin: 0;
+    margin-bottom: $gap;
+    font: $font-light;
+    color: $color-dark-lighter;
+  }
+
+  .label {
+    span {
+      display: block;
+      margin-bottom: $side-offset;
+      opacity: 0.6;
+      font: $font-medium;
+      color: $color-shark;
+    }
+
+    input {
+      width: 100%;
+      margin-bottom: $side-offset;
+    }
+
+    &:last-of-type {
+      position: relative;
+      input {
+        margin-bottom: 53px;
+      }
+
+      .restoreButton {
+        position: absolute;
+        padding: 0;
+        white-space: nowrap;
+        bottom: 0;
+        right: calc(100% + 30px);
+      }
+    }
+  }
+
+  .notification {
+    margin: 0;
+    margin-bottom: 40px;
+    font: $font-small;
+    color: $color-dark-lighter;
+
+    a {
+      color: $color-accent;
+      text-decoration: none;
+    }
+  }
+
+  .controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: $color-accent;
+      font: $font-light;
+      opacity: 0.8;
+      order: -1;
+      svg {
+        margin-right: $small-offset;
+        fill: $color-accent;
+        transform: rotate(90deg);
+      }
+    }
+  }
+}

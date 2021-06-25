@@ -1,0 +1,38 @@
+.registration {
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 100px;
+    max-width: calc(1280px - (93px * 2));
+    flex-wrap: wrap;
+
+    @media (max-width: 808px) {
+      justify-content: center;
+      padding-top: 0;
+    }
+  }
+
+  .left {
+    max-width: 404px;
+    @media (max-width: 814px) {
+      order: 2;
+      margin-top: $gap;
+    }
+  }
+
+  .title {
+    margin: 0;
+    margin-bottom: $middle-offset;
+    color: $color-shark;
+    font: $font-bold;
+  }
+
+  .descr {
+    margin: 0;
+    margin-bottom: $gap;
+    color: $color-dark-light;
+    font: $font-light;
+  }
+}
+
+

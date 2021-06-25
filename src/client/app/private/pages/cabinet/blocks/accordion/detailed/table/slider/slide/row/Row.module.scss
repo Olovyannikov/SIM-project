@@ -1,0 +1,31 @@
+.date {
+    color: $color-dark-lighter;
+    max-width: 140px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 314px;
+}
+
+.type {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 314px;
+}
+
+.operation {
+    font-weight: 700;
+    color: #1b1b1b;
+    max-width: 150px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-align: center;
+
+    @include tablet {
+        display: none;
+    }
+}
+
+.sum {
+    font-weight: 700;
+    color: #1b1b1b;
+}

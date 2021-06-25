@@ -1,0 +1,42 @@
+image: node:14.16.0-alpine3.11
+
+variables:
+    CI: "use"
+    TAG: registry.gmdp.io/glonassmobile/mvne/project/unitrade/web
+
+default:
+  before_script:
+    - mkdir -p ~/.docker/
+    - cat $docker_config > ~/.docker/config.json
+    - cat $npmrc > ~/.npmrc
+
+cache:
+  paths:
+    - node_modules/
+
+stages:
+    - build
+    - publish
+
+build:
+    stage: build
+    script:
+        - yarn
+    artifacts:
+        when: always
+        paths:
+            - build
+
+publish:
+    only: 
+      - master
+    stage: publish
+    image: docker:19.03.0
+    dependencies:
+        - build
+    script:
+        - cd build
+        - export DOCKER_TAG=$TAG:latest
+        - npmrc=$(cat ~/.npmrc| base64)
+        - docker build --build-arg NPMRC="$npmrc" -t $DOCKER_TAG .
+        - docker push $DOCKER_TAG

@@ -1,22 +1,17 @@
+import * as React from 'react';
+
 import s from './Dropdown.module.scss';
-import {useState} from "react";
 
-export const Dropdown = (props: { title: any, data: any }) => {
-    const [isOpen, setOpen] = useState(false);
-    const [items, setItem] = useState(props.data);
-    const [selectedItem, setSelectedItem] = useState(null);
+export const Dropdown = () => {
 
-    const toggleDropdown = () => setOpen(!isOpen);
-
-    const handleItemClick = (id: any) => {
-        selectedItem == id ? setSelectedItem(null) : setSelectedItem(id);
-        toggleDropdown();
-    }
+    const [isOpen, setIsOpen] = React.useState(false)
 
     return (
         <div className={s.dropdown}>
-            <div className={`${s.header} ${isOpen ? s.open : ''}`} onClick={toggleDropdown}>
-                {selectedItem ? items.find((item: any) => item.id == selectedItem).label : "Все"}
+            <div className={`${s.header} ${isOpen ? s.open : ''}`} onClick={() => setIsOpen(prev => !prev)}>
+                <span>
+                   Все 
+                </span>
                 <svg className={`${s.icon} ${isOpen ? s.open : ''}`} width="18" height="11" viewBox="0 0 18 11"
                      fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -24,14 +19,15 @@ export const Dropdown = (props: { title: any, data: any }) => {
                 </svg>
             </div>
             <div className={`${s.body} ${isOpen && s.open}`}>
-                {items.map((item: any) => (
+
+                {/* {serverData.map((item: any) => (
                     <div className={s.item} onClick={(e: any) => handleItemClick(e.target.id)} key={item.id}
                          id={item.id}>
                         <span className={`${item.id == selectedItem ? s.isSelected : ''}`}>
                             {item.label}
                         </span>
                     </div>
-                ))}
+                ))} */}
             </div>
         </div>
     )

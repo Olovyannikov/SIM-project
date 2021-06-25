@@ -1,9 +1,11 @@
 .idea
 node_modules
-/node_modules
 build
 .next
 **/generated
 bin
 .scannerwork
 .gradle
+.yarnrc
+.npmrc
+

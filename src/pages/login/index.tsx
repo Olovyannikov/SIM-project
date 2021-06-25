@@ -1,4 +1,4 @@
-import { PublicApplication } from 'app/desktop/public/PublicApplication';
+import { PublicApplication } from 'app/public/PublicApplication';
 import * as React from 'react';
 
 const Login = () => {

@@ -1,0 +1,70 @@
+.topBalance {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #E2E2E2;
+    padding: $middle-offset;
+    min-width: 384px;
+
+    @media (max-width: 402px) {
+        border: none;
+        padding: 0;
+    }
+
+    .title {
+        margin: 0;
+        margin-bottom: $middle-offset;
+        @media (max-width: 402px) {
+            display: none;
+        }
+    }
+
+    input {
+        margin-bottom: $small-offset;
+        @media (max-width: 402px) {
+            display: none;
+        }
+    }
+
+    .disclaimer {
+        display: block;
+        margin: 0;
+        margin-bottom: $middle-offset;
+        font: $font-smaller;
+        color: $color-dark-light;
+        opacity: 0.6;
+        @media (max-width: 402px) {
+            display: none;
+        }
+    }
+
+    .controls {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @media (max-width: 402px) {
+            flex-direction: column-reverse;
+        }
+    }
+
+    .list {
+        display: flex;
+
+        svg {
+            width: 50px;
+            height: 15px;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 402px) {
+            display: none;
+        }
+    }
+
+    @include tablet {
+        min-width: auto;
+        width: 100%;
+    }
+
+
+}

@@ -1,0 +1,44 @@
+
+.decoration {
+  position: relative;
+  margin-top: 108px;
+
+  @media (max-width: 808px) {
+    margin-top: 0;
+  }
+
+  .textItem {
+    position: absolute;
+    top: 88px;
+    left: 150px;
+    font: $font-light;
+    &:last-child {
+      top: 117px;
+    }
+
+    span {
+      color: #b4b4b4;
+      &:not(:last-child) {
+        margin-right: 15px;
+        color: #333;
+      }
+    }
+    
+    @media (max-width: 380px) {
+      left: 120px;
+      top: 65px;
+      font-size: 10px;
+
+      &:last-child {
+        top: 85px;
+      }
+    }
+  }
+
+  .descr {
+    margin-left: 15px;
+    max-width: 304px;
+    color: $color-shark;
+    font: $font-light;
+  }
+}

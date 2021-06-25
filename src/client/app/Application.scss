@@ -1,5 +1,3 @@
 .Application {
-    .Desktop {
-        @import './desktop/DesktopApplication.scss';
-    }
+    @import 'DesktopApplication';
 }
